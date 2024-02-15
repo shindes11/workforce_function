@@ -666,6 +666,8 @@ def getTotalWorkforce(tenant_employees, department):
     return actual_workforce
 
 def workforceAvailabilityPercentage(total_workforce, available_workforce):
+    if total_workforce is None or available_workforce is None:
+        return None
     return (available_workforce / total_workforce) * 100 if total_workforce != 0 else 0
 
 
